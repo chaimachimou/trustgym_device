@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Attendance</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Real-Time Attendance Monitoring</h1>
+    
+    <!-- Display list of Person IDs -->
+    <h2>Attendance List</h2>
+    <ul id="attendance-list">
+        <!-- List of attendees will be displayed here -->
+    </ul>
+
+    <script>
+        const socket = io.connect('http://127.0.0.1:5000');  // Connect to the Flask-SocketIO server
+
+        // Event when the connection is established
+        socket.on('connect', function() {
+            console.log('Connected to the server');
+        });
+
+        // Event to handle the initial list of attendees when a new client connects
+        socket.on('initial_data', function(data) {
+            console.log('Initial data received:', data.attendees);
+            updateAttendees(data.attendees);
+        });
+
+        // Event to handle new check-ins
+        socket.on('new_checkin', function(data) {
+            console.log('New check-in received:', data);
+            updateAttendees([data]);  // Update the list with the new check-in data
+        });
+
+        // Update the list of attendees on the page
+        function updateAttendees(attendees) {
+            const list = document.getElementById('attendance-list');
+            // Iterate over the list of attendees and display their Person IDs
+            attendees.forEach(function(attendee) {
+                const li = document.createElement('li');
+                li.textContent = `Person ID: ${attendee.person_id}, Check-in Time: ${attendee.check_in_time}`;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

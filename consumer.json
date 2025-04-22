@@ -1,0 +1,15 @@
+[
+    {
+        "name":"chaima_test",
+        "description":"test",
+        "consumerParams":[
+            {"name":"userId","value":"admin","description":"platform_user_name"},
+            {"name":"domainId","value":"0","description":"network_domain_id"}
+            ],
+            "consumerCode":"Fdg5GOmOBucT4WnmsPXkWuqBahLGZLBv",
+            "consumerSecretlist":[
+                {"appKey":"26737313","appSecret":"VMCICEDXszmI4z8bYSlm"}
+            ],
+                "resetSign":0
+    }
+]
