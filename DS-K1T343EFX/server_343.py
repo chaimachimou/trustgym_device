@@ -27,7 +27,7 @@ def run_program(script_name):
 
         # Ensure the script exists in the current directory (or adjust the path as needed)
         if not os.path.exists(script_name):
-            return f"Error: Script '{script_name}' does not exist!" 
+            return f"Error: Script '{script_name}' does not exist!"
 
         # Run the script using subprocess
         subprocess.run(['python', script_name], check=True)
@@ -37,7 +37,7 @@ def run_program(script_name):
 
 @app.route('/')
 def home():
-    return jsonify({"message": "Python Server is running!"})
+    return jsonify({"available_scripts": available_scripts})  # Modified this line
 
 # Endpoint to trigger a single script by name
 @app.route('/run-script', methods=['POST'])
@@ -58,7 +58,7 @@ def run_script_endpoint():
 
     return jsonify({"message": f"Script '{script_name}' is running in the background!"})
 
-# Endpoint to trigger multiple scripts
+# Endpoint to trigger multiple scripts 
 @app.route('/run-multiple-scripts', methods=['POST'])
 def run_multiple_scripts_endpoint():
     data = request.get_json()
@@ -72,7 +72,7 @@ def run_multiple_scripts_endpoint():
     if invalid_scripts:
         return jsonify({"error": f"Invalid scripts: {', '.join(invalid_scripts)}"}), 404
 
-    # Run each script in a separate background thread
+    # Run each script in a separate background thread 
     threads = []
     for script_name in script_names:
         thread = threading.Thread(target=run_program, args=(script_name,))
@@ -87,6 +87,3 @@ def run_multiple_scripts_endpoint():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=80)
-
-
-

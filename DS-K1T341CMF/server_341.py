@@ -18,6 +18,7 @@ available_scripts = [
     "add_prv_341.py"
 ]
 
+
 # Function to run the Python script
 def run_program(script_name):
     try:
@@ -37,7 +38,7 @@ def run_program(script_name):
 
 @app.route('/')
 def home():
-    return jsonify({"message": "Python Server is running!"})
+    return jsonify({"available_scripts": available_scripts})  # Modified this line
 
 # Endpoint to trigger a single script by name
 @app.route('/run-script', methods=['POST'])
