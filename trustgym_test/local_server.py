@@ -3,23 +3,30 @@ import subprocess
 import time
 import os
 
-# Server addresses
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CUSTOM_SCRIPT_BASE = os.environ.get("SERVER_SCRIPT_BASE")
+
+def get_script_path(*parts):
+    if CUSTOM_SCRIPT_BASE:
+        return os.path.join(CUSTOM_SCRIPT_BASE, *parts)
+    else:
+        return os.path.join(BASE_DIR, *parts)
+
 SERVERS = {
     "server_341": "http://localhost:80",
     "server_343": "http://localhost:80",
     "server_804": "http://localhost:80"
 }
 
-# Full paths to each server script
 SERVER_SCRIPTS = {
-    "server_341": r"C:\Users\Chaima\Desktop\server1\server\DS-K1T341CMF\server_341.py",
-    "server_343": r"C:\Users\Chaima\Desktop\server1\server\DS-K1T343EFX\server_343.py",
-    "server_804": r"C:\Users\Chaima\Desktop\server1\server\DS-K1T804AEF\server_804.py"
+    "server_341": get_script_path("DS-K1T341CMF", "server_341.py"),
+    "server_343": get_script_path("DS-K1T343EFX", "server_343.py"),
+    "server_804": get_script_path("DS-K1T804AEF", "server_804.py"),
 }
 
 def check_server_is_running(url):
     try:
-        requests.get(url, timeout=2)
+        requests.get(url, timeout=5)
         return True
     except requests.ConnectionError:
         return False
@@ -37,10 +44,10 @@ def start_server_script(server_key):
         subprocess.Popen(
             ['python', script_path],
             cwd=script_dir,
-            creationflags=subprocess.CREATE_NEW_CONSOLE  # Open in a new console window
+            creationflags=subprocess.CREATE_NEW_CONSOLE
         )
         print(f"Starting {server_key} ({script_path})...")
-        time.sleep(5)  # Give it time to start
+        time.sleep(10)
     except Exception as e:
         print(f"Failed to start {server_key}: {e}")
 
