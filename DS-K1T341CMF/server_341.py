@@ -25,7 +25,7 @@ def run_program(script_name):
         # Check if the script is in the list of available scripts
         if script_name not in available_scripts:
             return f"Error: Script '{script_name}' is not available!"
-
+        
         # Ensure the script exists in the current directory (or adjust the path as needed)
         if not os.path.exists(script_name):
             return f"Error: Script '{script_name}' does not exist!"

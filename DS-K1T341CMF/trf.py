@@ -6,8 +6,8 @@ import time
 import requests
 
 # API credentials and URLs
-app_key = '26737313' 
-app_secret = 'VMCICEDXszmI4z8bYSlm'  
+app_key = '27435223' 
+app_secret = 'J194LCQU62Sl81YSYBkg'  
 url_person_add = "http://127.0.0.1:9016/artemis/api/resource/v1/person/single/add"  # API endpoint for adding person
 url_privilege_group_add = "http://127.0.0.1:9016/artemis/api/acs/v1/privilege/group/single/addPersons"  # API endpoint for adding to privilege group
 

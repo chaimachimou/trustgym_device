@@ -7,8 +7,8 @@ import time
 from datetime import datetime, timezone
 
 # Define API credentials
-app_key = "26737313"
-app_secret = "VMCICEDXszmI4z8bYSlm"
+app_key = "27435223"
+app_secret = "J194LCQU62Sl81YSYBkg"
 base_url = "http://127.0.0.1:9016/artemis/api/resource/v1/person/advance/personList"
 
 # Generate a timestamp
@@ -18,8 +18,7 @@ timestamp = str(int(time.time() * 1000))  # Current timestamp in milliseconds
 payload = {
     "pageNo": 1,
     "pageSize": 10,
-    "personName": "chaima",  # Replace with the name you want to search
-    "cardNo":"0006419352"
+    "personName": "chaima"  # Replace with the name you want to search
 }
 
 # String to sign for API authentication
