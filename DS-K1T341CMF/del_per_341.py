@@ -9,7 +9,7 @@ from requests.auth import HTTPDigestAuth
 # Your API keys and endpoint details for the signature-based request
 app_key = '27435223'
 app_secret = 'J194LCQU62Sl81YSYBkg'
-url = "http://127.0.0.1:9016/artemis/api/resource/v1/person/single/delete"
+url = "http://196.224.39.92/artemis/api/resource/v1/person/single/delete"
 
 # Device information for the second API request
 ip_address = "192.168.1.32"  # Your device's IP address

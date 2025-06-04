@@ -10,8 +10,8 @@ import xml.etree.ElementTree as ET
 # Your API keys and endpoint details
 app_key = '27435223'  # Your provided API key
 app_secret = 'J194LCQU62Sl81YSYBkg'  # Your provided API secret
-url_person_add = "http://127.0.0.1:9016/artemis/api/resource/v1/person/single/add"  # Your provided API endpoint for adding person
-url_privilege_group_add = "http://127.0.0.1:9016/artemis/api/acs/v1/privilege/group/single/addPersons"  # Privilege group API
+url_person_add = "http://196.224.39.92/artemis/api/resource/v1/person/single/add"  # Your provided API endpoint for adding person
+url_privilege_group_add = "http://196.224.39.92/artemis/api/acs/v1/privilege/group/single/addPersons"  # Privilege group API
 
 # Device information for fingerprint capture
 ip_address = "192.168.1.97"  # Your device's IP address

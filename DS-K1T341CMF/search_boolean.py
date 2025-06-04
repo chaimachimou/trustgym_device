@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 # Define API credentials
 app_key = "27435223"
 app_secret = "J194LCQU62Sl81YSYBkg"
-base_url = "http://127.0.0.1:9016/artemis/api/resource/v1/person/advance/personList"
+base_url = "http://196.224.39.92/artemis/api/resource/v1/person/advance/personList"
 
 # Generate a timestamp
 timestamp = str(int(time.time() * 1000))  # Current timestamp in milliseconds

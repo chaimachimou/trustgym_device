@@ -10,7 +10,7 @@ from requests.auth import HTTPDigestAuth
 # Your API keys and endpoint details
 app_key = '26737313'  # Your provided API key
 app_secret = 'VMCICEDXszmI4z8bYSlm'  # Your provided API secret
-url = "http://127.0.0.1:9016/artemis/api/resource/v1/person/single/add"  # Your provided API endpoint
+url = "http://196.224.39.92/artemis/api/resource/v1/person/single/add"  # Your provided API endpoint
 
 # Device information for fingerprint capture
 ip_address = "192.168.1.32"  # Your device's IP address

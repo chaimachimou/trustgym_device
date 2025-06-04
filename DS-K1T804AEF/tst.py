@@ -8,7 +8,7 @@ import requests
 # Your API keys and endpoint details
 app_key = '27435223'
 app_secret = 'J194LCQU62Sl81YSYBkg'
-url = 'http://127.0.0.1:9016/artemis/api/attendance/v1/report'  # HTTP URL
+url = 'http://196.224.39.92/artemis/api/attendance/v1/report'  # HTTP URL
 
 # Prepare the request body (Example provided in the documentation)
 body = {

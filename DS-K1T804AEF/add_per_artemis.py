@@ -9,8 +9,8 @@ from requests.auth import HTTPDigestAuth
 # Your API keys and endpoint details
 app_key = '27435223'
 app_secret = 'J194LCQU62Sl81YSYBkg'
-url = "http://127.0.0.1:9016/artemis/api/resource/v1/person/single/add"
-url_privilege_group_add = "http://127.0.0.1:9016/artemis/api/acs/v1/privilege/group/single/addPersons"
+url = "http://196.224.39.92/artemis/api/resource/v1/person/single/add"
+url_privilege_group_add = "http://196.224.39.92/artemis/api/acs/v1/privilege/group/single/addPersons"
 
 # Device information
 ip_address = "192.168.1.50"  # Your device's IP address
